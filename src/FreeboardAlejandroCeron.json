@@ -1,0 +1,83 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"width": 1,
+			"row": {
+				"3": 15
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Temperatura",
+						"value": "datasources[\"UCEVA\"][\"Temperature\"]",
+						"units": "c",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 7
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Humedad",
+						"value": "datasources[\"UCEVA\"][\"Humedad\"]",
+						"units": "%rh",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "Grafico",
+						"value": [
+							"datasources[\"UCEVA\"][\"Humedad\"]",
+							"datasources[\"UCEVA\"][\"Temperature\"]"
+						]
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "UCEVA",
+			"type": "dweet_io",
+			"settings": {
+				"thing_id": "AlejandroCeron"
+			}
+		}
+	],
+	"columns": 3
+}
